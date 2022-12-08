@@ -5,6 +5,7 @@ describe('Test case search keyword in Google and verify result', () => {
 
     it('Search an random keyword (Google)', () => {
         
+        //enter google on search
         cy.get('input[name="q"]').should('be.empty').type('google{enter}');
         //verify result
 
