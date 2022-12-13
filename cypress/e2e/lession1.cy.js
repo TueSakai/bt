@@ -8,8 +8,8 @@ describe('Test case search keyword in Google and verify result', () => {
     })
 
     it('Search an random keyword (Google)', () => {
-        //enter google on search
-        pageGoogle.getGoogleSearch().should('be.empty').type('google{enter}');  
+        //enter google on search  
+        cy.searchKeyword('google');
 
         //check keyword
         cy.CheckKeyword('Google');
