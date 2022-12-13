@@ -1,8 +1,5 @@
-import PageGoogle from "../support/pageUI/PageGoogle.js";
-
 
 describe('Test case search keyword in Google and verify result', () => {
-    const pageGoogle = new PageGoogle();
     beforeEach (() => {
         cy.visit('https://www.google.com')
     })
