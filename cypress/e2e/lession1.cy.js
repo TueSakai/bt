@@ -1,18 +1,19 @@
+import PageGoogle from "../support/pageUI/PageGoogle.js";
+
+
 describe('Test case search keyword in Google and verify result', () => {
+    const pageGoogle = new PageGoogle();
     beforeEach (() => {
         cy.visit('https://www.google.com')
     })
 
     it('Search an random keyword (Google)', () => {
-        
         //enter google on search
-        cy.get('input[name="q"]').should('be.empty').type('google{enter}');
-        //verify result
+        pageGoogle.getGoogleSearch().should('be.empty').type('google{enter}');  
 
-        //have keyword Google
-        cy.get('h3').should('include.text',"Google");
-        // link www.google.com appear
-        cy.get('cite').should('include.text',"www.google.com.vn");
+        //check keyword
+        cy.CheckKeyword('Google');
+        cy.CheckLink('google.com.vn');
         
     })
 })
