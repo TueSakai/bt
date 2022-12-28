@@ -1,5 +1,23 @@
-class PageDemo {
+let dayChosen = 2
+let day
+let month = 'May'
+let year = '1999'
 
+if(dayChosen == 1){
+    day = dayChosen +'st'
+}
+else if(dayChosen == 2){
+    day = dayChosen + 'nd'
+}
+else if (dayChosen == 3){
+    day = dayChosen + 'rd'
+}
+else {
+    day = dayChosen + 'th'
+}
+
+class PageDemo {
+    
     putFirstName() {
         return cy.xpath('//input[@id="firstName"]')
     }
@@ -14,6 +32,20 @@ class PageDemo {
 
     putContactNumber(){
         return cy.xpath('//input[@id="userNumber"]')
+    }
+
+    putDateOfBirth(){
+        return cy.xpath('//input[@id="dateOfBirthInput"]')
+    }
+
+    putMonth(){
+        return cy.xpath('//select[@class="react-datepicker__month-select"]')
+    }
+    putYear(){
+        return cy.xpath('//select[@class="react-datepicker__year-select"]')
+    }
+    putDay(){
+        return cy.xpath('//div[contains(@aria-label,"'+month+' '+day+', '+year+'")]')
     }
 
     getSubmitButton(){
@@ -32,6 +64,9 @@ class PageDemo {
     }
     getContactNumber(){
         return cy.xpath('//td[text()="Mobile"]/following-sibling::td')
+    }
+    getDateOfBirth(){
+        return cy.xpath('//td[text()="Date of Birth"]/following-sibling::td')
     }
 
 }
