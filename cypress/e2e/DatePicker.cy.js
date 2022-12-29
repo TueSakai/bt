@@ -6,8 +6,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('Date picker', () => {
     const pageDatePicker = new PageDatePicker()
-    let year = 2015
-    let month = 12
+    let year = 2023
+    let month = 3
     let date = new Date()
     let yearNow = date.getFullYear()
     beforeEach (() => {
@@ -38,7 +38,11 @@ describe('Date picker', () => {
             pageDatePicker.previousButton().click()
             }
         }
-        pageDatePicker.changeDay2("31").click()
+        pageDatePicker.changeDay2("1").click()
+    })
+
+    it('DatePicker Enable', () => {
+        pageDatePicker.getCalendar("2").type("5/29/2021{enter}")
     })
 
 })

@@ -1,7 +1,6 @@
 
 import "cypress-file-upload";
 import PageGoogle from "./pageUI/PageGoogle.js";
-import PageLogin from "./pageUI/PageLogin.js";
 const pageGoogle = new PageGoogle();
 Cypress.Commands.add("CheckKeyword", (value) => {
     
