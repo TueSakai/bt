@@ -6,7 +6,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('Date picker', () => {
     const pageDatePicker = new PageDatePicker()
-    let year = 2030
+    let year = 2015
     let month = 12
     let date = new Date()
     let yearNow = date.getFullYear()
