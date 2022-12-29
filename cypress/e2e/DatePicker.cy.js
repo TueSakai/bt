@@ -34,7 +34,7 @@ describe('Date picker', () => {
                 }
         }
         else {
-            for (var i = 1; i < 12*(yearNow-year)+(12-month+1); i++) {
+            for (var i = 0; i < 12*(yearNow-year)+(12-month); i++) {
             pageDatePicker.previousButton().click()
             }
         }
