@@ -10,7 +10,8 @@ describe('Date picker', () => {
     const pageDatePicker = new PageDatePicker()
     let year = 2013
     let month = 1
-    let yearNow = 2022
+    let date = new Date()
+    let yearNow = date.getFullYear()
     beforeEach (() => {
         cy.viewport(1920,1080)
         cy.visit('https://demo.automationtesting.in/Datepicker.html')
