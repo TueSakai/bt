@@ -4,12 +4,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
-
-
 describe('Date picker', () => {
     const pageDatePicker = new PageDatePicker()
-    let year = 2013
-    let month = 1
+    let year = 2030
+    let month = 12
     let date = new Date()
     let yearNow = date.getFullYear()
     beforeEach (() => {
@@ -29,11 +27,18 @@ describe('Date picker', () => {
 
     it('DatePicker Disable', () => {
         pageDatePicker.getCalendar("1").click()
-        for (var i = 1; i < 12*(yearNow-year)+(12-month+1); i++) {
-            pageDatePicker.previousButton().click()
+
+        if (year > yearNow) {
+            for (var i = 0; i < 12*(year-yearNow-1)+(month); i++) {
+                pageDatePicker.nextButton().click()
+                }
         }
-        pageDatePicker.changeDay2("17").click()
-        
+        else {
+            for (var i = 1; i < 12*(yearNow-year)+(12-month+1); i++) {
+            pageDatePicker.previousButton().click()
+            }
+        }
+        pageDatePicker.changeDay2("31").click()
     })
 
 })

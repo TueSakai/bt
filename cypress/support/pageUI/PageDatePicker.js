@@ -8,9 +8,15 @@ class PageDatePicker {
     changeDay(value){
         return cy.xpath("//a[text()='"+value+"']")
     }
+    
+    nextButton(){
+        return cy.xpath("//span[text()='Next']")
+    }
+
     previousButton(){
         return cy.xpath("//span[text()='Prev']")
     }
+
     changeDay2(value){
         return cy.xpath("//td[@data-handler='selectDay']/a[text()='"+value+"']")
     }
